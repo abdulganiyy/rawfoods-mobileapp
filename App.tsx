@@ -1,18 +1,32 @@
-import { StyleSheet, Text, View } from 'react-native';
+import "react-native-gesture-handler"
+import { StyleSheet, View, StatusBar } from "react-native"
+import { NavigationContainer } from "@react-navigation/native"
+import Main from "~/navigations/Main"
+
+import { useFonts } from "expo-font"
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    Avenir: "https://fonts.cdnfonts.com/css/avenir",
+  })
+
+  if (!fontsLoaded) {
+    return null
+  }
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <NavigationContainer>
+        <Main />
+      </NavigationContainer>
+
+      <StatusBar />
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
-});
+})
