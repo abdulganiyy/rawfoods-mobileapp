@@ -20,7 +20,7 @@ const Splash: FC<SplashScreenProps> = ({ navigation }) => {
             Order the best meals in Ilorin and have them delivered to your doorstep in little or no time. Doesn’t that
             sound delicious???
           </Text>
-          <Button onChange={() => navigation.navigate("Login")}>
+          <Button onChange={() => navigation.navigate("Home")}>
             <AntDesign name="arrowright" size={24} color="black" />
           </Button>
         </View>
